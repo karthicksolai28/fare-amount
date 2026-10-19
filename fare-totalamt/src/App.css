@@ -1,0 +1,75 @@
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #777777;
+  --border: #dddddd;
+  --accent: #f5c518;
+  --fair-bg: #d4f7d4;
+  --warn-bg: #fff3c4;
+  --bad-bg: #ffd6d6;
+}
+
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f1f1f1;
+  --muted: #a0a0a0;
+  --border: #333333;
+  --accent: #f5c518;
+  --fair-bg: #1f4d2b;
+  --warn-bg: #5a4a10;
+  --bad-bg: #5c2323;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Vite default index.css-ah override panna */
+:root[data-theme] body {
+  background: var(--bg);
+  color: var(--text);
+  display: block;
+  margin: 0;
+}
+
+.app { max-width: 420px; margin: 20px auto; padding: 16px; font-family: sans-serif; overflow-x: hidden; }
+.header { display: flex; justify-content: space-between; align-items: center; }
+
+.app button {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+.app input, .app select {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.form label, .settings label, .city { display: block; margin: 12px 0; }
+.form input[type="number"], .settings input, .city select {
+  display: block; width: 100%; min-width: 0; padding: 8px; margin-top: 4px;
+}
+.check { display: flex !important; gap: 8px; align-items: center; }
+.check input { width: auto !important; margin: 0 !important; }
+
+.toggle, .tabs { display: flex; gap: 8px; }
+.tabs { margin-bottom: 16px; }
+.toggle button, .tabs button { flex: 1; padding: 10px; }
+.toggle .active, .tabs .active { background: var(--accent); color: #000; font-weight: bold; }
+
+.result { margin-top: 20px; }
+.result table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.result td { padding: 6px; border-bottom: 1px solid var(--border); }
+.result h2, .result td, .badge p { overflow-wrap: anywhere; }
+
+.badge { margin-top: 12px; padding: 12px; border-radius: 8px; }
+.fair { background: var(--fair-bg); }
+.slightly-high { background: var(--warn-bg); }
+.overcharge { background: var(--bad-bg); }
+
+.save-btn { width: 100%; margin-top: 16px; padding: 10px; }
+.rate-card { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin: 12px 0; }
+.trip-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.trip-item small { display: block; color: var(--muted); }
